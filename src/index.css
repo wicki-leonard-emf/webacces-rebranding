@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+/* Geist sans (variable) via CDN fallback. If you self-host later, replace with @font-face rules. */
+@import url("https://cdn.jsdelivr.net/npm/@fontsource-variable/geist@5.0.3/index.css");
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
 /*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
@@ -1548,16 +1550,22 @@ html {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, #2b2b2b 0%, #333 20%, #f2f2f2 50%, #f0f0f0 60%, #333 80%, #2b2b2b 100%);
-  background-size: 400px% 100%;
+  background-image: linear-gradient(90deg, #2b2b2b 0%, #333 20%, #f2f2f2 50%, #f0f0f0 60%, #333 80%, #2b2b2b 100%);
+  background-size: 400% 100%;
+  background-position: 0 0;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
   background-clip: text;
   animation: 6s linear infinite shimmer;
-}
-
 .shimmer-text-prestige {
   -webkit-text-fill-color: transparent;
-  background: linear-gradient(90deg, #1a1a1a 0% 35%, #4a4a4a 45%, #6a6a6a 50%, #8a8a8a 55%, #4a4a4a 65%, #1a1a1a 100%) 0 0 / 200px 100% text;
+  background-image: linear-gradient(90deg, #1a1a1a 0%, #1a1a1a 35%, #4a4a4a 45%, #6a6a6a 50%, #8a8a8a 55%, #4a4a4a 65%, #1a1a1a 100%);
+  background-position: 0 0;
+  background-size: 200px 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: 4s linear infinite shimmer;
+}
   animation: 4s linear infinite shimmer;
 }
 
